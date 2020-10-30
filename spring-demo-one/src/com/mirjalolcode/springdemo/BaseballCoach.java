@@ -1,6 +1,13 @@
 package com.mirjalolcode.springdemo;
 
 public class BaseballCoach implements Coach {
+	// define a private field for the dependency
+	private FortuneService fortuneService;
+	
+	// define ctor for dependency injection
+	public BaseballCoach(FortuneService theFortuneService) {
+		fortuneService=theFortuneService;
+	}
 	
 	@Override
 	public String getDailyWorkout() {
@@ -9,7 +16,7 @@ public class BaseballCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		// use my fortuneService to get a fortune
+		return fortuneService.getFortune();
 	}
 }
