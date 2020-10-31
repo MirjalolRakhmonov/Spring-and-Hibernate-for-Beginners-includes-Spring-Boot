@@ -16,5 +16,7 @@ public class MyApp {
 		//theCoach.getDailyWorkout();
 		Coach theCoach=context.getBean("myCoach", Coach.class);
 		theCoach.getDailyWorkout();
+		
+		context.close();
 	}
 }
