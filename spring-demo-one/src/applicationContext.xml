@@ -6,32 +6,16 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-        
-        
-<!-- load the properties file: sport.properties -->
-<context:property-placeholder location="classpath:sport.properties"/>
 
 <!-- define your beans here -->
 <bean id="myFortuneService"
-class="com.mirjalolcode.springdemo.HappyFortuneService">
+class="com.mirjalolcode.springdemo.RandomFortuneService">
 </bean>
 
-<bean id="myCoach"
-class="com.mirjalolcode.springdemo.TrackCoach">
+<bean id="myBoxingCoach"
+class="com.mirjalolcode.springdemo.BoxingCoach">
 
 <!-- set up constructor injection -->
 <constructor-arg ref="myFortuneService"/>
-</bean>
-
-<bean id="myCricketCoach"
-class="com.mirjalolcode.springdemo.CricketCoach">
-
-<!-- set up setter injection -->
-<property name="fortuneService" ref="myFortuneService"/>
-
-<!-- inject literal values -->
-<property name="emailAddress" value="${foo.email}"/>
-<property name="team" value="${foo.team}"/>
-
 </bean>
 </beans>
