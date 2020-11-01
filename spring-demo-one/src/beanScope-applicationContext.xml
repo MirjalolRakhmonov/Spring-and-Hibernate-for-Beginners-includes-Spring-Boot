@@ -13,7 +13,8 @@ class="com.mirjalolcode.springdemo.HappyFortuneService">
 </bean>
 
 <bean id="myCoach"
-class="com.mirjalolcode.springdemo.TrackCoach">
+class="com.mirjalolcode.springdemo.TrackCoach"
+scope="prototype">
 
 <!-- set up constructor injection -->
 <constructor-arg ref="myFortuneService"/>
