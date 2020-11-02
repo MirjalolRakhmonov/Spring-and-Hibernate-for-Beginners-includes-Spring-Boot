@@ -9,11 +9,11 @@
 
 <!-- define your beans here -->
 <bean id="myFortuneService"
-class="com.mirjalolcode.springdemo.HappyFortuneService">
+class="com.mirjalolcode.springdemo.RandomFortuneService">
 </bean>
 
-<bean id="myCoach"
-class="com.mirjalolcode.springdemo.TrackCoach"
+<bean id="myBoxingCoach"
+class="com.mirjalolcode.springdemo.BoxingCoach"
 scope="prototype">
 
 <!-- set up constructor injection -->
