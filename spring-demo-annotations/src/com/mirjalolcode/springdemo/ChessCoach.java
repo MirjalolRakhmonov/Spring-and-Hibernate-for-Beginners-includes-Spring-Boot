@@ -11,4 +11,10 @@ public class ChessCoach implements Coach {
 		return "Practice your thinking speed";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
