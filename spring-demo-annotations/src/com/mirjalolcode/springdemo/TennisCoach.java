@@ -1,11 +1,14 @@
 package com.mirjalolcode.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
 	
+	@Autowired
+	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 	
 	public TennisCoach() {
@@ -23,12 +26,12 @@ public class TennisCoach implements Coach {
 		return "Practice your backhand volley";
 	}
 
-	@Autowired
+	/*@Autowired
 	public void setFortuneService(FortuneService fortuneService) {
 		System.out.println("TennisCoach: inside setFortuneService() method");
 		this.fortuneService = fortuneService;
 	}
-
+ */
 	@Override
 	public String getDailyFortune() {
 		// TODO Auto-generated method stub
