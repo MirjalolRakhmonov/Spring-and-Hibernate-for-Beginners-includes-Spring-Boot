@@ -1,5 +1,8 @@
 package com.mirjalolcode.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -37,5 +40,14 @@ public class TennisCoach implements Coach {
 		// TODO Auto-generated method stub
 		return fortuneService.getFortune();
 	}
-
+	
+	@PostConstruct
+	public void doMyStartUpStuff() {
+		System.out.println(">> TennisCoach inside of doMyStartUpStuff");
+	}
+	
+	@PreDestroy
+	public void doMyCleanUpStuff() {
+		System.out.println(">> TennisCoach inside of doMyCleanUpStuff");
+	}
 }
