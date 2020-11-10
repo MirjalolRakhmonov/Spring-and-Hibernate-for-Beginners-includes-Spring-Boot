@@ -1,0 +1,11 @@
+package com.mirjalolcode.springdemo;
+
+public class ChessCoach implements Coach {
+
+	@Override
+	public String getDailyWorkout() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

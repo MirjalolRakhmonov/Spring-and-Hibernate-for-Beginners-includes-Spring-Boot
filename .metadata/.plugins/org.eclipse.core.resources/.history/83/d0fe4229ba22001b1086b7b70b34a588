@@ -1,0 +1,22 @@
+package com.mirjalolcode.springdemo;
+
+public class WrestlingCoach implements Coach {
+	private FortuneService fortuneService;
+	
+
+	public WrestlingCoach(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your double leg takedown.";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return fortuneService.getFortune();
+	}
+
+}

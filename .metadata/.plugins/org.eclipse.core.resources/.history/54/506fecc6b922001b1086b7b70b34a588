@@ -1,0 +1,17 @@
+package com.mirjalolcode.springdemo;
+
+public class WrestlingCoach implements Coach {
+
+	public WrestlingCoach() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

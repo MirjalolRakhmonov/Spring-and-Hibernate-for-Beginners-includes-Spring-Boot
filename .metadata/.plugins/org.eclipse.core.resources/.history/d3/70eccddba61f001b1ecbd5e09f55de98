@@ -1,0 +1,10 @@
+package com.mirjalolcode.springdemo;
+
+public class FileFortuneService implements FortuneService {
+
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}

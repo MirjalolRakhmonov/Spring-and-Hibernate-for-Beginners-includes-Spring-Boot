@@ -1,0 +1,15 @@
+package com.mirjalolcode.springdemo;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class FileFortuneService implements FortuneService {
+
+	public String fileName="C:\\Users\\e6530\\workspace\\spring-demo-annotations\\src\\fortune-data.txt";
+	
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}

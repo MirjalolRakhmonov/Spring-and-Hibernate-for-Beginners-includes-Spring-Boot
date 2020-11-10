@@ -1,0 +1,15 @@
+package com.mirjalolcode.springdemo;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class FileFortuneService implements FortuneService {
+
+	public String fileName=""
+	
+	@Override
+	public String getFortune() {
+		return null;
+	}
+
+}

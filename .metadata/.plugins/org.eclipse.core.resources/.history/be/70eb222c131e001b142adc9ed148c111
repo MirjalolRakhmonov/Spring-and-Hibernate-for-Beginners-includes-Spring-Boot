@@ -1,0 +1,10 @@
+package com.mirjalolcode.springdemo;
+
+public class AnnotationDemoPracticeApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

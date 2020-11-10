@@ -1,0 +1,5 @@
+package com.mirjalolcode.springdemo;
+
+public interface FortuneService {
+
+}
