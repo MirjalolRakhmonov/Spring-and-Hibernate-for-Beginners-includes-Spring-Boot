@@ -23,7 +23,8 @@ public class HelloWorldController {
 	
 	// new controller method to read form data and add data to the model
 	
-	public String letsShouteDude(HttpServletRequest request, Model model) {
+	@RequestMapping("/processFormVersionTwo") 
+	public String letsShoutDude(HttpServletRequest request, Model model) {
 		// read the request parameter from the HTML form
 		String theName=request.getParameter("studentName");
 		
@@ -31,7 +32,7 @@ public class HelloWorldController {
 		theName=theName.toUpperCase();
 		
 		// create the message
-		String result="Yo!" + theName;
+		String result="Yo! " + theName;
 		
 		// add message to the model
 		model.addAttribute("message", result);
