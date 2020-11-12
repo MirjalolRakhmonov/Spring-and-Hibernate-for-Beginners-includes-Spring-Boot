@@ -21,11 +21,10 @@
    
    Country:
    
-   <form:select path="country">
-   
-     <form:options items="${student.countryOptions}"/>
+   <form:select path="country"> 
+ <form:options items="${theCountryOptions}" />
+</form:select>
 
-   </form:select>
    <br><br>
    
    <input type="submit" value="Submit" />
