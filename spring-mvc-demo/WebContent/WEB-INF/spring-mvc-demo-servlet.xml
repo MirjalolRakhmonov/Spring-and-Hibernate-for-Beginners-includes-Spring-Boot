@@ -29,7 +29,13 @@
 	
 	<util:properties  id="countryOptions" location="classpath:../countries.properties" /> 
 	
-	<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources> 
+	<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+	
+	<!-- Load custom message resources --> 
+	<bean id="messageSource" 
+	class="org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basenames" value="resources/messages" />
+	</bean>
 
 </beans>
 
