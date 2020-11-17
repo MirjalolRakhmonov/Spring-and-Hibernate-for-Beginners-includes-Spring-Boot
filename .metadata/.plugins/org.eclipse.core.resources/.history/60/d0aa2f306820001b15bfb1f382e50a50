@@ -1,8 +1,0 @@
-package com.mirjalolcode.springdemo;
-
-public class AnnotationBeanScopeDemoApp {
-
-	public static void main(String[] args) {
-	}
-
-}

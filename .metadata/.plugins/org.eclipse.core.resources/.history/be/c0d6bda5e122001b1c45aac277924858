@@ -1,5 +1,0 @@
-package com.mirjalolcode.springdemo.mvc;
-
-public class HomeController {
-
-}
