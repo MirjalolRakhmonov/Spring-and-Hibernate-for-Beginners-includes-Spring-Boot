@@ -32,10 +32,20 @@ public class QueryStudentDemo {
 			displayStudents(theStudents);
 			
 			// query students: last name='Rakhmonov'
-			theStudents=session.createQuery("from Student s where s.lastName='Rakhmonov'").getResultList();
+			theStudents=session.createQuery("from Student s where s.lastName='Hunter'").getResultList();
+			displayStudents(theStudents);
 			
 			// display the students
-			System.out.println("\n\nStudents have last name of Rakhmonov");
+			System.out.println("\n\nStudents have last name of Hunter");
+			displayStudents(theStudents);
+			
+			theStudents=session.createQuery("from Student s where s.lastName='Hunter' OR s.firstName='Ilyos'").getResultList();
+			System.out.println("\n\nStudents have last name of Hunter OR firstName Ilyos");
+			displayStudents(theStudents);
+			
+			// query students where email LIKE '%yahoo.com'
+			theStudents=session.createQuery("from Student where email LIKE '%yahoo.com'").getResultList();
+			System.out.println("\n\nStudents whose email ends with yahoo.com");
 			displayStudents(theStudents);
 			
 			// commit transaction
