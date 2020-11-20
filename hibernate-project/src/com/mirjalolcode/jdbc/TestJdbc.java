@@ -7,8 +7,8 @@ public class TestJdbc {
 
 	public static void main(String[] args) {
 		String jdbcUrl="jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
-		String user="hbstudent";
-		String pass="hbstudent";
+		String user="hbemployee";
+		String pass="hbemployee";
 		
 		try {
 			System.out.println("Connecting to database: "+jdbcUrl);
