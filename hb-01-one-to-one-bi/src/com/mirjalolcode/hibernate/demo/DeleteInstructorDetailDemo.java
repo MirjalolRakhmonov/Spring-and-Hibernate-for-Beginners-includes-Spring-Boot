@@ -8,7 +8,7 @@ import com.mirjalolcode.hibernate.demo.entity.Instructor;
 import com.mirjalolcode.hibernate.demo.entity.InstructorDetail;
 import com.mirjalolcode.hibernate.demo.entity.Student;
 
-public class CreateDemo {
+public class DeleteInstructorDetailDemo {
 
 	public static void main(String[] args) {
 		
@@ -23,29 +23,34 @@ public class CreateDemo {
 		Session session=factory.getCurrentSession();
 		
 		try {
-			// create the objects
-			System.out.println("Creating the objects...");
-			
-			Instructor theInstructor=new Instructor("Oston", "Urunov", "oston@gmail.com");
-			InstructorDetail tempInstructorDetail=new InstructorDetail("https://www.youtube.com","Spartak Moscow");
-			
-			// associate the objects
-			theInstructor.setInstructorDetail(tempInstructorDetail);
-			
-			// start a transaction
+			// start transaction
 			session.beginTransaction();
 			
-			// save the instructor
-			// Note: this will save the details object due to CascadeType.ALL
-			System.out.println("Saving instructor: "+theInstructor);
-			session.save(theInstructor);
+			// get the instructor detail object 
+			int theId=1;
+			InstructorDetail tempInstructorDetail=session.get(InstructorDetail.class, theId);
+			
+			// print instructor detail
+			System.out.println("tempInstructoDetail: "+ tempInstructorDetail);
+			// print the associated instructor
+			System.out.println("the associated instructor: "+tempInstructorDetail.getInstructor());
+			
+			// now let's delete the instructor detail
+			System.out.println("Deleting tempInstructorDetail: "+tempInstructorDetail);
+			session.delete(tempInstructorDetail);
 			
 			// commit transaction
 			session.getTransaction().commit();
 			
 			System.out.println("Done!");
 		}
+		catch(Exception exc) {
+			exc.printStackTrace();
+		}
 		finally {
+			// handle connection leak issue
+			session.close();
+			
 			factory.close();
 		}
 	}
