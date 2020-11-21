@@ -8,7 +8,7 @@ import com.mirjalolcode.hibernate.demo.entity.Instructor;
 import com.mirjalolcode.hibernate.demo.entity.InstructorDetail;
 import com.mirjalolcode.hibernate.demo.entity.Student;
 
-public class CreateDemo {
+public class DeleteDemo {
 
 	public static void main(String[] args) {
 		
@@ -23,22 +23,20 @@ public class CreateDemo {
 		Session session=factory.getCurrentSession();
 		
 		try {
-			// create the objects
-			System.out.println("Creating the objects...");
-			
-			Instructor theInstructor=new Instructor("Aziz", "Akhmedov", "akhmedov@yahoo.com");
-			InstructorDetail tempInstructorDetail=new InstructorDetail("https://www.youtube.com","Football");
-			
-			// associate the objects
-			theInstructor.setInstructorDetail(tempInstructorDetail);
-			
-			// start a transaction
+			// start transaction
 			session.beginTransaction();
 			
-			// save the instructor
-			// Note: this will save the details object due to CascadeType.ALL
-			System.out.println("Saving instructor: "+theInstructor);
-			session.save(theInstructor);
+			// get instructor by primary key / id
+			int theId=2;
+			Instructor tempInstructor=session.get(Instructor.class, theId);
+			
+			System.out.println("Found Instructor: "+tempInstructor);
+			// delete the instructors
+			if(tempInstructor!=null) {
+				System.out.println("Deleting: "+tempInstructor);
+				
+				session.delete(tempInstructor);
+			}
 			
 			// commit transaction
 			session.getTransaction().commit();
