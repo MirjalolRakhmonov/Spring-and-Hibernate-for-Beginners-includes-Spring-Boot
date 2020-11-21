@@ -40,7 +40,13 @@ public class GetInstructorDetailDemo {
 			
 			System.out.println("Done!");
 		}
+		catch(Exception exc) {
+			exc.printStackTrace();
+		}
 		finally {
+			// handle connection leak issue
+			session.close();
+			
 			factory.close();
 		}
 	}
