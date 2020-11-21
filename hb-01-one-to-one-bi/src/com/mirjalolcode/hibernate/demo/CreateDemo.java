@@ -26,8 +26,8 @@ public class CreateDemo {
 			// create the objects
 			System.out.println("Creating the objects...");
 			
-			Instructor theInstructor=new Instructor("Oston", "Urunov", "oston@gmail.com");
-			InstructorDetail tempInstructorDetail=new InstructorDetail("https://www.youtube.com","Spartak Moscow");
+			Instructor theInstructor=new Instructor("Eldor", "Shomurodov", "shomurodov_e@gmail.com");
+			InstructorDetail tempInstructorDetail=new InstructorDetail("https://www.youtube.com","Genoa FC");
 			
 			// associate the objects
 			theInstructor.setInstructorDetail(tempInstructorDetail);
