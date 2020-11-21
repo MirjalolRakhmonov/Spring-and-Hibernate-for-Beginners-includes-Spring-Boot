@@ -37,7 +37,12 @@ public class DeleteInstructorDetailDemo {
 			
 			// now let's delete the instructor detail
 			System.out.println("Deleting tempInstructorDetail: "+tempInstructorDetail);
+			
+			// remove the associated object reference
 			session.delete(tempInstructorDetail);
+			
+			// break bi-directional link
+			tempInstructorDetail.getInstructor().setInstructorDetail(null);
 			
 			// commit transaction
 			session.getTransaction().commit();
