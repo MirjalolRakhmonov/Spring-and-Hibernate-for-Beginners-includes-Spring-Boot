@@ -36,7 +36,10 @@ public class CreateDemo {
 			session.beginTransaction();
 			
 			// save the instructor
-			 
+			// Note: this will save the details object due to CascadeType.ALL
+			System.out.println("Saving instructor: "+theInstructor);
+			session.save(theInstructor);
+			
 			// commit transaction
 			session.getTransaction().commit();
 			
