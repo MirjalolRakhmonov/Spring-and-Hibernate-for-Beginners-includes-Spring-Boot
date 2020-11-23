@@ -3,13 +3,14 @@ package com.mirjalolcode.hibernate.demo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import com.mirjalolcode.hibernate.demo.entity.Course;
 import com.mirjalolcode.hibernate.demo.entity.Instructor;
 import com.mirjalolcode.hibernate.demo.entity.InstructorDetail;
 import com.mirjalolcode.hibernate.demo.entity.Student;
 
-public class EagerLazyDemo {
+public class FetchJoinDemo {
 
 	public static void main(String[] args) {
 		
@@ -29,13 +30,22 @@ public class EagerLazyDemo {
 			// start a transaction
 			session.beginTransaction();
 			
+			// option Hibernate query with HQL
+			Query<Instructor>query=
+					session.createQuery("select i from Instructor i "
+							+"JOIN FETCH i.courses "
+							+"WHERE i.id=:theInstructorId",Instructor.class);
+			
 			// get the instructor from database
 			int theId=1;
-			Instructor tempInstructor=session.get(Instructor.class, theId);
+			
+			// set parameter
+			query.setParameter("theInstructorId", theId);
+			
+			// execute query and get instructor
+			Instructor tempInstructor=query.getSingleResult();
 			
 			System.out.println("Instructor: "+tempInstructor);
-			
-			System.out.println("Courses: "+tempInstructor.getCourses());
 			
 			// commit transaction
 			session.getTransaction().commit();
