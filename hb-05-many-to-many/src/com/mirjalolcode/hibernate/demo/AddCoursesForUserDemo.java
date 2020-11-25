@@ -39,11 +39,17 @@ public class AddCoursesForUserDemo {
 			System.out.println("Courses: "+tempStudent.getCourses());
 			
 			// create more courses
-			
+			Course tempCourse=new Course("Rubik's Cube - How to Speed Cube");
+			Course temCourse2=new Course("Ultimate Git Course - How make professional profile");
 			
 			// add student to courses
+			tempCourse.addStudent(tempStudent);
+			temCourse2.addStudent(tempStudent);
 			
 			// save the courses
+			System.out.println("\nSaving the courses ...");
+			session.save(tempCourse);
+			session.save(temCourse2);
 			
 			// commit transaction
 			session.getTransaction().commit();
