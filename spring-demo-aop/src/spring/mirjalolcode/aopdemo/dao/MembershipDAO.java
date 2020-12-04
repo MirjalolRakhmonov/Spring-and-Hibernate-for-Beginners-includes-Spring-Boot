@@ -9,4 +9,8 @@ public class MembershipDAO {
 		System.out.println(getClass()+"Doing stuff: Adding a membership account");
 		return true;
 	}
+	
+	public void codingTime() {
+		System.out.println(getClass()+": Coding process is in progress... ");
+	}
 }
