@@ -4,7 +4,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import spring.mirjalolcode.aopdemo.dao.AccountDAO;
 
-
 public class MainDemoApp {
 
 	public static void main(String[] args) {
