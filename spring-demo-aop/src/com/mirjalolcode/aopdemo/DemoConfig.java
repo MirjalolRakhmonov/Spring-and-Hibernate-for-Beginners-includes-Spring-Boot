@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import spring.mirjalolcode.aopdemo.dao.AccountDAO;
+import spring.mirjalolcode.aopdemo.dao.MembershipDAO;
 
 @Configuration
 @EnableAspectJAutoProxy
@@ -17,5 +18,10 @@ public class DemoConfig {
 	public AccountDAO accDao() {
         return new AccountDAO();
     }
+	
+	@Bean(name = "membershipDAO")
+	public MembershipDAO memDao() {
+		return new MembershipDAO();
+	}
 
 }
