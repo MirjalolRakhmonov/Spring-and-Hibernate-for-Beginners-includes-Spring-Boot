@@ -13,7 +13,11 @@ public class AccountDAO {
 	private String name;
 	private String serviceCode;
 	
-	public List<Account> findAccounts() {
+	public List<Account> findAccounts(boolean tripWare) {
+		if (tripWare) {
+			throw new RuntimeException();
+		}
+		
 		List<Account>myAccounts=new ArrayList<>();
 		
 		// create sample accounts
