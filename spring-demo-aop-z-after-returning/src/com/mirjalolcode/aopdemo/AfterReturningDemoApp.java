@@ -19,8 +19,10 @@ public class AfterReturningDemoApp {
 		
 		// call the method to find the accounts
 		List<Account>theAccounts=theAccountDAO.findAccounts();
+		
 		System.out.println("\n\nMain Program: AfterReturningDemoApp");
 		System.out.println("----");
+		
 		System.out.println(theAccounts);
 		System.out.println("\n");
 		
