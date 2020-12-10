@@ -18,9 +18,10 @@ public class AroundDemoApp {
 		
 		System.out.println("\nMain Program: AroundDemoApp");
 		
-		String data=theFortuneService.getFortune();
+		System.out.println("Calling getFortune");
 		
-		System.out.println("\nMy  fortune is: "+data);
+        String data = theFortuneService.getFortune();
+		System.out.println("\nMy fortune is: " + data);
 		
 		// close the context
 		context.close();
