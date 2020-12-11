@@ -1,9 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-    <typeInfo handle="=web-customer-tracker/src&lt;com.mirjalolcode.springdemo.dao{CustomerDAO.java[CustomerDAO" modifiers="513" timestamp="1606765350819"/>
-    <typeInfo handle="=web-customer-tracker/src&lt;com.mirjalolcode.springdemo.service{CustomerService.java[CustomerService" modifiers="513" timestamp="1606765209952"/>
-    <typeInfo handle="=web-customer-tracker/C:\/Users\/e6530\/workspace\/web-customer-tracker\/WebContent\/WEB-INF\/lib\/hibernate-core-5.4.23.Final.jar&lt;org.hibernate(CustomEntityDirtinessStrategy.class[CustomEntityDirtinessStrategy" modifiers="1537" timestamp="1606402033799"/>
-    <typeInfo handle="=product-crud-application/src&lt;com.mirjalolcode.springdemo.dao{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1607017878346"/>
-    <typeInfo handle="=product-crud-application/src&lt;com.mirjalolcode.springdemo.service{ProductService.java[ProductService" modifiers="513" timestamp="1607017795063"/>
-    <typeInfo handle="=product-crud-application/C:\/Users\/e6530\/workspace\/product-crud-application\/WebContent\/WEB-INF\/lib\/spring-jms-5.3.0.jar&lt;org.springframework.jms.core(ProducerCallback.class[ProducerCallback" modifiers="1537" timestamp="1606833635492"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
