@@ -21,6 +21,7 @@
        
        <!-- Check for login error -->
        <c:if test="${param.error!=null}">
+       
        <i class="failed">Sorry! You entered invalid username/password.</i>
        </c:if>
        
