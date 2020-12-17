@@ -34,7 +34,7 @@
         
         
         <property name="java-output-path" value="/spring-security-demo/target/classes"/>
-        <property name="context-root" value="spring-security-demo-06-user-roles"/>
+        <property name="context-root" value="spring-security-demo"/>
                                                     
     
     
