@@ -24,6 +24,13 @@
    </p>
    
    <hr>
+      <!-- Add a link to point to /leaders ... this is for managers -->
+      
+      <p>
+         <a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
+          (Only for Manager folks)
+      </p>
+   <hr>
    
    <!-- Add Logout button -->
    <form:form action="${pageContext.request.contextPath}/logout"
