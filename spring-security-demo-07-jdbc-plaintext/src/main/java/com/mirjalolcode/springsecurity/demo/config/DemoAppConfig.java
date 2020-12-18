@@ -63,9 +63,33 @@ public class DemoAppConfig {
 		logger.info(">>> jdbc.user=" + env.getProperty("jdbc.user"));
 		
 		// set database connection props
+		securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
+		securityDataSource.setUser(env.getProperty("jdbc.user"));
+		securityDataSource.setPassword(env.getProperty("jdbc.password"));
 		
 		// set connection pool props
+		securityDataSource.setInitialPoolSize(
+				getProperty("connection.pool.initialPoolSize"));
+		
+		securityDataSource.setMinPoolSize(
+				getProperty("connection.pool.minPoolSize"));
+		
+		securityDataSource.setMaxPoolSize(
+				getProperty("connection.pool.maxPoolSize"));
+		
+		securityDataSource.setMaxIdleTime(
+				getProperty("connection.pool.maxIdleTime"));
 		
 		return null;
+	}
+	
+	// need a helper method
+	// read environment property and convert it to int
+	private int getProperty(String propName) {
+		String propValue=env.getProperty(propName);
+		
+		int intPropVal=Integer.parseInt(propValue);
+		
+		return intPropVal;
 	}
 }
