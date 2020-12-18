@@ -1,9 +1,7 @@
 package com.mirjalolcode.springsecurity.demo.config;
-
 import java.beans.PropertyVetoException;
 import java.util.logging.Logger;
 
-import javax.management.JMRuntimeException;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,75 +19,89 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.mirjalolcode.springsecurity.demo")
-@PropertySource("classpath:persistance-mysql.properties")
+@PropertySource("classpath:persistence-mysql.properties")
 public class DemoAppConfig {
-	// set up variable to hold properties
-	@Autowired
-	private Environment env;
+	// set up variable to hold the properties
 	
-	// set up a logger for diagnostics
-	private Logger logger=Logger.getLogger(getClass().getName());
-	
-	// define a bean for ViewResolver
-	@Bean
-	public ViewResolver viewResolver() {
+		@Autowired
+		private Environment env;
 		
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		// set up a logger for diagnostics
 		
-		viewResolver.setPrefix("/WEB-INF/view/");
-		viewResolver.setSuffix(".jsp");
+		private Logger logger = Logger.getLogger(getClass().getName());
 		
-		return viewResolver;
-	}
-	
-	// define a bean for our security datasource
-	@Bean
-	public DataSource securityDataSource() {
 		
-		// create a connection pool
-		ComboPooledDataSource securityDataSource=
-				new ComboPooledDataSource();
-		
-		// set the jdbc driver class
-		try {
-			securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
+		// define a bean for ViewResolver
+
+		@Bean
+		public ViewResolver viewResolver() {
 			
-		} catch (PropertyVetoException exc) {
-			throw new RuntimeException(exc);
+			InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+			
+			viewResolver.setPrefix("/WEB-INF/view/");
+			viewResolver.setSuffix(".jsp");
+			
+			return viewResolver;
 		}
 		
-		// log the connection props
-		logger.info(">>> jdbc.url=" + env.getProperty("jdbc.url"));
-		logger.info(">>> jdbc.user=" + env.getProperty("jdbc.user"));
+		// define a bean for our security datasource
 		
-		// set database connection props
-		securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
-		securityDataSource.setUser(env.getProperty("jdbc.user"));
-		securityDataSource.setPassword(env.getProperty("jdbc.password"));
+		@Bean
+		public DataSource securityDataSource() {
+			
+			// create connection pool
+			ComboPooledDataSource securityDataSource
+										= new ComboPooledDataSource();
+					
+			// set the jdbc driver class
+			
+			try {
+				securityDataSource.setDriverClass(env.getProperty("jdbc.driver"));
+			} catch (PropertyVetoException exc) {
+				throw new RuntimeException(exc);
+			}
+			
+			// log the connection props
+			// for sanity's sake, log this info
+			// just to make sure we are REALLY reading data from properties file
+			
+			logger.info(">>> jdbc.url=" + env.getProperty("jdbc.url"));
+			logger.info(">>> jdbc.user=" + env.getProperty("jdbc.user"));
+			
+			
+			// set database connection props
+			
+			securityDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
+			securityDataSource.setUser(env.getProperty("jdbc.user"));
+			securityDataSource.setPassword(env.getProperty("jdbc.password"));
+			
+			// set connection pool props
+			
+			securityDataSource.setInitialPoolSize(
+					getIntProperty("connection.pool.initialPoolSize"));
+
+			securityDataSource.setMinPoolSize(
+					getIntProperty("connection.pool.minPoolSize"));
+
+			securityDataSource.setMaxPoolSize(
+					getIntProperty("connection.pool.maxPoolSize"));
+
+			securityDataSource.setMaxIdleTime(
+					getIntProperty("connection.pool.maxIdleTime"));
+			
+			return securityDataSource;
+		}
 		
-		// set connection pool props
-		securityDataSource.setInitialPoolSize(
-				getProperty("connection.pool.initialPoolSize"));
+		// need a helper method 
+		// read environment property and convert to int
 		
-		securityDataSource.setMinPoolSize(
-				getProperty("connection.pool.minPoolSize"));
-		
-		securityDataSource.setMaxPoolSize(
-				getProperty("connection.pool.maxPoolSize"));
-		
-		securityDataSource.setMaxIdleTime(
-				getProperty("connection.pool.maxIdleTime"));
-		
-		return null;
+		private int getIntProperty(String propName) {
+			
+			String propVal = env.getProperty(propName);
+			
+			// now convert to int
+			int intPropVal = Integer.parseInt(propVal);
+			
+			return intPropVal;
+		}
 	}
-	
-	// need a helper method
-	// read environment property and convert it to int
-	private int getProperty(String propName) {
-		String propValue=env.getProperty(propName);
-		
-		int intPropVal=Integer.parseInt(propValue);
-		
-		return intPropVal;
-	}
-}
