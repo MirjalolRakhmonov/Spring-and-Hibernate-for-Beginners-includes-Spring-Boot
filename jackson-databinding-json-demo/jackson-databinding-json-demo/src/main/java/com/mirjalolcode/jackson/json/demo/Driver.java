@@ -9,19 +9,22 @@ public class Driver {
 	public static void main(String[] args) {
 		
 		try {
-			
 			// create object mapper
-			ObjectMapper mapper=new ObjectMapper();
+			ObjectMapper mapper = new ObjectMapper();
 			
-			// read JSON file and map/convert to Java POJO: data/sample-lite.json
-			Student theStudent=mapper.readValue(new File("data/sample-lite.json"), Student.class);
+			// read JSON  file and map/convert to Java POJO: 
+			// data/sample-lite.json
 			
-			System.out.println("First name= "+theStudent.getFirstName());
-			System.out.println("Last name= "+theStudent.getLastName());
+			Student theStudent = mapper.readValue(
+						new File("data/sample-full.json"), Student.class);
 			
-		} catch (Exception exc) {
+			// print first name and last name
+			System.out.println("First name = " + theStudent.getFirstName());
+			System.out.println("Last name = " + theStudent.getLastName());
+
+		}
+		catch (Exception exc) {
 			exc.printStackTrace();
 		}
 	}
-
 }
