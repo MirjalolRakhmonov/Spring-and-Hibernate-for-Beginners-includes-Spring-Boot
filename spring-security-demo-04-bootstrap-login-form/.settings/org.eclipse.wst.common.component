@@ -19,7 +19,7 @@
         
         
         <property name="java-output-path" value="/spring-security-demo/target/classes"/>
-        <property name="context-root" value="spring-security-demo-04-bootstrap-login-form"/>
+        <property name="context-root" value="spring-security-demo"/>
                             
     
     

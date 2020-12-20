@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="RefactoringWizard.preview">
-		<item key="width" value="590"/>
-		<item key="height" value="390"/>
+		<item key="width" value="470"/>
+		<item key="height" value="240"/>
 	</section>
 	<section name="RefactoringStatusDialog">
 		<item key="DIALOG_WIDTH" value="816"/>
