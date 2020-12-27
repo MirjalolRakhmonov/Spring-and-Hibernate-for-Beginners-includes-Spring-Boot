@@ -1,7 +1,7 @@
 #Tomcat publish data
-#Sun Dec 20 09:04:32 CET 2020
+#Tue Dec 22 02:01:43 CET 2020
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\e6530\\workspace\\product-crud-application-aop\\WebContent\\WEB-INF\\lib\\spring-web-5.3.0.jar=WEB-INF/lib/spring-web-5.3.0.jar
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\e6530\\.m2\\repository\\org\\springframework\\spring-web\\5.0.5.RELEASE\\spring-web-5.0.5.RELEASE.jar=WEB-INF/lib/spring-web-5.0.5.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\e6530\\workspace\\product-crud-application\\WebContent\\WEB-INF\\lib\\spring-web-5.3.0.jar=WEB-INF/lib/spring-web-5.3.0.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\e6530\\workspace\\product-crud-application\\WebContent\\WEB-INF\\lib\\spring-web-5.3.0-sources.jar=WEB-INF/lib/spring-web-5.3.0-sources.jar
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\e6530\\workspace\\product-crud-application-aop\\WebContent\\WEB-INF\\lib\\spring-web-5.3.0-sources.jar=WEB-INF/lib/spring-web-5.3.0-sources.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\e6530\\.m2\\repository\\org\\springframework\\spring-web\\5.0.6.RELEASE\\spring-web-5.0.6.RELEASE.jar=WEB-INF/lib/spring-web-5.0.6.RELEASE.jar

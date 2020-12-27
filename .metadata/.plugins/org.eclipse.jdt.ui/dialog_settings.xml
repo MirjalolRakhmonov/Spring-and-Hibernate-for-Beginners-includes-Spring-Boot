@@ -132,9 +132,9 @@
 		<item key="updateSimilarElements" value="false"/>
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 		<item key="updateTextualMatches" value="false"/>
-		<item key="updateQualifiedNames" value="false"/>
+		<item key="updateQualifiedNames" value="true"/>
 		<item key="patterns" value="*"/>
-		<item key="renameSubpackages" value="false"/>
+		<item key="renameSubpackages" value="true"/>
 	</section>
 	<section name="DialogBounds_GenerateToStringDialog">
 		<item key="DIALOG_X_ORIGIN" value="91"/>
