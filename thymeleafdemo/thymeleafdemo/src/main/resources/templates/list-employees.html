@@ -2,15 +2,24 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
+   <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
    <title>Employee Directory</title>
 </head>
 
 <body>
+  <div class="container">
+   
    <h3>Employee Directory</h3>
    <hr>
    
-   <table border="1">
-      <thead>
+   <table class="table table-border table-striped">
+      <thead class="thead-dark">
          <tr>
             <th>First Name</th>
             <th>Last Name</th>
@@ -27,5 +36,6 @@
          </tr>
       </tbody>
    </table>
+  </div>
    
 </body>
